@@ -13,9 +13,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        /*findViewById<View>(R.id.main).setOnClickListener {
+        findViewById<View>(R.id.main).setOnClickListener {
             startActivity(Intent(this, LevelSelectorActivity::class.java))
             // Más adelante: LevelSelectorActivity::class.java
-        }*/
+        }
     }
 }
