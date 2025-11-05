@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">AndroidAA2</string>
+    <string name="app_name">Ahorcado</string>
+    <string name="menu_title">Ahorcado</string>
+    <string name="tap_continue">Tap to continue</string>
 </resources>
