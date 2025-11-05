@@ -2,6 +2,36 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:clickable="true"
+    android:focusable="true">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/menu_title"
+        android:textAlignment="center"
+        android:textSize="70sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:contentDescription="@null"
+        app:srcCompat="@drawable/ic_ahorcado" />
+
+    <TextView
+        android:id="@+id/tapToContinue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:text="@string/tap_continue"
+        android:textSize="32sp" />
 
 </LinearLayout>
