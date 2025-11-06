@@ -61,8 +61,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="A"
-                android:onClick="onKeyClick"/>
+                android:onClick="onKeyClick"
+                android:text="A" />
             <Button
                 android:id="@+id/btnB"
                 android:layout_width="0dp"
