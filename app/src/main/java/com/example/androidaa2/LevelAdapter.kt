@@ -7,10 +7,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class LevelAdapter(
-    private val items: List<Level>,
-    private val onClick: (Level) -> Unit
-) : RecyclerView.Adapter<LevelAdapter.VH>() {
+class LevelAdapter(private val items: List<Level>)
+    : RecyclerView.Adapter<LevelAdapter.VH>() {
 
     class VH(view: View) : RecyclerView.ViewHolder(view) {
         val tvWord: TextView = view.findViewById(R.id.tvWord)
@@ -26,17 +24,17 @@ class LevelAdapter(
 
     override fun onBindViewHolder(holder: VH, position: Int) {
         val level = items[position]
+        val len = level.lettersCount()
+
         holder.tvWord.text = "Palabra: ${level.word}"
-        holder.tvLetters.text = "Letras: ${level.lettersCount}"
+        holder.tvLetters.text = "Letras: $len"
 
-        val icon = when (level.difficulty) {
-            Difficulty.EASY -> R.drawable.ic_easy
-            Difficulty.MEDIUM -> R.drawable.ic_medium
-            Difficulty.HARD -> R.drawable.ic_hard
+        val iconRes = when (len) {
+            in 1..4 -> R.drawable.ic_easy
+            in 5..7 -> R.drawable.ic_medium
+            else    -> R.drawable.ic_hard
         }
-        holder.imgDifficulty.setImageResource(icon)
-
-        holder.itemView.setOnClickListener { onClick(level) }
+        holder.imgDifficulty.setImageResource(iconRes)
     }
 
     override fun getItemCount() = items.size

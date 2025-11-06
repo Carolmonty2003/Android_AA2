@@ -15,7 +15,6 @@ class MainActivity : AppCompatActivity() {
 
         findViewById<View>(R.id.main).setOnClickListener {
             startActivity(Intent(this, LevelSelectorActivity::class.java))
-            // Más adelante: LevelSelectorActivity::class.java
         }
     }
 }
