@@ -35,6 +35,13 @@ class LevelAdapter(private val items: List<Level>)
             else    -> R.drawable.ic_hard
         }
         holder.imgDifficulty.setImageResource(iconRes)
+
+        holder.itemView.setOnClickListener {
+            val ctx = it.context
+            val i = android.content.Intent(ctx, GameActivity::class.java)
+            i.putExtra("WORD", level.word.uppercase())
+            ctx.startActivity(i)
+        }
     }
 
     override fun getItemCount() = items.size
