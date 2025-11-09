@@ -8,6 +8,18 @@ import android.widget.CheckBox
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.Fragment
 
+/**
+ * SettingsFragment
+ * ----------------
+ * Fragment de ajustes que permite alternar el tema de la app entre Light/Dark.
+ * Se carga dentro de la Activity anfitriona en un FrameLayout (patrón Toolbar+Fragment
+ * como en los PDFs: replace + addToBackStack).
+ *
+ * Uso responsable de IA:
+ *  - IA-asistida para redactar comentarios y recordar la secuencia correcta:
+ *    leer prefs -> setear UI -> listener que guarda y llama a AppCompatDelegate.
+ *  - Revisión y adaptación final alineada con los apuntes de clase.
+ */
 class SettingsFragment : Fragment(R.layout.fragment_settings) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -19,7 +31,7 @@ class SettingsFragment : Fragment(R.layout.fragment_settings) {
         checkBox.isChecked = isNight
 
         checkBox.setOnCheckedChangeListener { _, checked: Boolean ->
-            if (checked == isNight) return@setOnCheckedChangeListener //return@setOnCheckedChangeListener arregla bug parpadeo de cuando cambias dentro de un nivel.
+            if (checked == isNight) return@setOnCheckedChangeListener //IA-asistencia: return@setOnCheckedChangeListener arregla bug parpadeo de cuando cambias dentro de un nivel.
 
             prefs.edit().putBoolean("night", checked).apply()
 

@@ -8,17 +8,29 @@ import android.widget.FrameLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.appcompat.widget.Toolbar
-import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
+/**
+ * LevelSelectorActivity
+ * ----------------------
+ * Pantalla que lista los niveles disponibles del ahorcado mediante RecyclerView.
+ * Integra:
+ *  - TopBar reutilizable (Toolbar + menú con "Settings").
+ *  - Navegación a GameActivity al pulsar un item.
+ *  - Apertura de SettingsFragment dentro del mismo Activity (replace en FrameLayout + back stack).
+ *
+ * Uso responsable de IA:
+ *  - IA-asistida para redactar comentarios, estandarizar el patrón de Toolbar+Fragment
+ *    conforme a los apuntes y recordar el orden de Night Mode.
+ */
 class LevelSelectorActivity : AppCompatActivity() {
 
     private lateinit var rv: RecyclerView
     private lateinit var myToolbar: Toolbar
     private lateinit var frame: FrameLayout
 
-    // Lista
+    // --- Datos (lista local de niveles) ---
     private val levels = listOf(
         Level(1, "ENTI"),
         Level(2, "TETRIS"),
@@ -79,6 +91,12 @@ class LevelSelectorActivity : AppCompatActivity() {
         }
     }
 
+    /**
+     * openSettings
+     * -------------
+     * Oculta la lista y muestra el contenedor de fragment.
+     * Carga SettingsFragment con back stack para que "Atrás" vuelva al listado.
+     */
     private fun openSettings() {
         rv.visibility = View.GONE
         frame.visibility = View.VISIBLE
@@ -91,6 +109,12 @@ class LevelSelectorActivity : AppCompatActivity() {
         supportActionBar?.title = getString(R.string.settings)
     }
 
+    /**
+     * onBackPressed
+     * --------------
+     * Si el SettingsFragment está visible, vuelve al listado;
+     * si no, comportamiento por defecto (volver a la pantalla anterior).
+     */
     override fun onBackPressed() {
         if (frame.visibility == View.VISIBLE) {
             supportFragmentManager.popBackStack()
