@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_weight="1"
     android:orientation="vertical"
     >
 
@@ -13,13 +12,12 @@
     <!-- Teclado -->
     <LinearLayout
         android:id="@+id/game"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:gravity="center_horizontal"
+        android:gravity="top|center_horizontal"
         android:padding="16dp"
         >
-
 
         <ImageView
             android:id="@+id/imgAhorcado"
@@ -41,7 +39,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:text="You Win"
+            android:text="@string/you_win"
             android:textSize="24sp"
             android:textStyle="bold"
             android:visibility="gone" />
@@ -51,11 +49,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="Tap to continue"
+            android:text="@string/tap_continue"
+            android:textColor="@color/white"
             android:visibility="gone" />
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:orientation="vertical">
@@ -63,7 +62,7 @@
             <!-- Fila 1: A-F -->
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
@@ -73,7 +72,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:onClick="onKeyClick"
-                    android:text="A" />
+                    android:text="A"
+                    android:textColor="@color/white" />
 
                 <Button
                     android:id="@+id/btnB"
@@ -81,7 +81,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:onClick="onKeyClick"
-                    android:text="B" />
+                    android:text="B"
+                    android:textColor="@color/white"/>
 
                 <Button
                     android:id="@+id/btnC"
@@ -89,7 +90,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:onClick="onKeyClick"
-                    android:text="C" />
+                    android:text="C"
+                    android:textColor="@color/white"/>
 
                 <Button
                     android:id="@+id/btnD"
@@ -97,7 +99,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:onClick="onKeyClick"
-                    android:text="D" />
+                    android:text="D"
+                    android:textColor="@color/white"/>
 
                 <Button
                     android:id="@+id/btnE"
@@ -105,7 +108,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:onClick="onKeyClick"
-                    android:text="E" />
+                    android:text="E"
+                    android:textColor="@color/white"/>
 
                 <Button
                     android:id="@+id/btnF"
@@ -113,12 +117,13 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:onClick="onKeyClick"
-                    android:text="F" />
+                    android:text="F"
+                    android:textColor="@color/white"/>
             </LinearLayout>
 
             <!-- Fila 2: G-L -->
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
@@ -128,7 +133,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:onClick="onKeyClick"
-                    android:text="G" />
+                    android:text="G"
+                    android:textColor="@color/white"/>
 
                 <Button
                     android:id="@+id/btnH"
@@ -136,7 +142,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:onClick="onKeyClick"
-                    android:text="H" />
+                    android:text="H"
+                    android:textColor="@color/white"/>
 
                 <Button
                     android:id="@+id/btnI"
@@ -144,7 +151,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:onClick="onKeyClick"
-                    android:text="I" />
+                    android:text="I"
+                    android:textColor="@color/white"/>
 
                 <Button
                     android:id="@+id/btnJ"
@@ -152,7 +160,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:onClick="onKeyClick"
-                    android:text="J" />
+                    android:text="J"
+                    android:textColor="@color/white"/>
 
                 <Button
                     android:id="@+id/btnK"
@@ -160,7 +169,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:onClick="onKeyClick"
-                    android:text="K" />
+                    android:text="K"
+                    android:textColor="@color/white"/>
 
                 <Button
                     android:id="@+id/btnL"
@@ -168,12 +178,13 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:onClick="onKeyClick"
-                    android:text="L" />
+                    android:text="L"
+                    android:textColor="@color/white"/>
             </LinearLayout>
 
             <!-- Fila 3: M-Q -->
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
@@ -184,7 +195,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:onClick="onKeyClick"
-                    android:text="M" />
+                    android:text="M"
+                    android:textColor="@color/white"/>
 
                 <Button
                     android:id="@+id/btnN"
@@ -192,7 +204,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:onClick="onKeyClick"
-                    android:text="N" />
+                    android:text="N"
+                    android:textColor="@color/white"/>
 
                 <Button
                     android:id="@+id/btnO"
@@ -200,7 +213,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:onClick="onKeyClick"
-                    android:text="O" />
+                    android:text="O"
+                    android:textColor="@color/white"/>
 
                 <Button
                     android:id="@+id/btnP"
@@ -208,7 +222,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:onClick="onKeyClick"
-                    android:text="P" />
+                    android:text="P"
+                    android:textColor="@color/white"/>
 
                 <Button
                     android:id="@+id/btnQ"
@@ -216,7 +231,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:onClick="onKeyClick"
-                    android:text="Q" />
+                    android:text="Q"
+                    android:textColor="@color/white"/>
 
                 <Button
                     android:id="@+id/btnR"
@@ -224,12 +240,13 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:onClick="onKeyClick"
-                    android:text="R" />
+                    android:text="R"
+                    android:textColor="@color/white"/>
             </LinearLayout>
 
             <!-- Fila 4: S-X -->
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
@@ -239,7 +256,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:onClick="onKeyClick"
-                    android:text="S" />
+                    android:text="S"
+                    android:textColor="@color/white"/>
 
                 <Button
                     android:id="@+id/btnT"
@@ -247,7 +265,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:onClick="onKeyClick"
-                    android:text="T" />
+                    android:text="T"
+                    android:textColor="@color/white"/>
 
                 <Button
                     android:id="@+id/btnU"
@@ -255,7 +274,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:onClick="onKeyClick"
-                    android:text="U" />
+                    android:text="U"
+                    android:textColor="@color/white"/>
 
                 <Button
                     android:id="@+id/btnV"
@@ -263,7 +283,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:onClick="onKeyClick"
-                    android:text="V" />
+                    android:text="V"
+                    android:textColor="@color/white"/>
 
                 <Button
                     android:id="@+id/btnW"
@@ -271,7 +292,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:onClick="onKeyClick"
-                    android:text="W" />
+                    android:text="W"
+                    android:textColor="@color/white"/>
 
                 <Button
                     android:id="@+id/btnX"
@@ -279,12 +301,13 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:onClick="onKeyClick"
-                    android:text="X" />
+                    android:text="X"
+                    android:textColor="@color/white"/>
             </LinearLayout>
 
             <!-- Fila 5: Y-Z -->
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
@@ -294,7 +317,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:onClick="onKeyClick"
-                    android:text="Y" />
+                    android:text="Y"
+                    android:textColor="@color/white"/>
 
                 <Button
                     android:id="@+id/btnZ"
@@ -302,7 +326,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:onClick="onKeyClick"
-                    android:text="Z" />
+                    android:text="Z"
+                    android:textColor="@color/white"/>
 
                 <!--Para ayudar a distribucion y que se vea ordenado-->
                 <Button
@@ -340,7 +365,7 @@
     <FrameLayout
         android:id="@+id/frame"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="match_parent"
         android:layout_weight="1"
         android:visibility="gone">
     </FrameLayout>
