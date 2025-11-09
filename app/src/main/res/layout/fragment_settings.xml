@@ -13,27 +13,13 @@
         android:orientation="vertical"
         android:padding="16dp">
 
-
-        <LinearLayout
+        <CheckBox
+            android:id="@+id/nightMode"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-
-            <CheckBox
-                android:id="@+id/nightMode"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.3"
-                android:text="@string/night_mode" />
-
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="match_parent"
-                android:layout_height="47dp"
-                android:layout_weight="0.9"
-                tools:src="@drawable/ic_dark_mode" />
-
-        </LinearLayout>
+            android:layout_height="wrap_content"
+            android:buttonTint="?attr/colorOnSecondaryContainer"
+            android:text="@string/night_mode"
+            android:textSize="20sp" />
 
     </LinearLayout>
 
