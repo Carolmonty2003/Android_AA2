@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  recycler_layout_manager.xml
+...................................
+  Item de la lista de niveles:
+   - Contenedor con ripple táctil (selectableItemBackground).
+   - Columna izquierda: palabra y número de letras.
+   - Columna derecha: icono de dificultad (fácil/medio/difícil).
+-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
