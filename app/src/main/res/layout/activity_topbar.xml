@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 
+<!--
+  activity_topbar.xml
+........................
+  Pantalla "host" con:
+   - Toolbar propia (no include) para usos puntuales (p. ej., SettingsActivity).
+   - Un FrameLayout donde insertar un Fragment con replace()+addToBackStack().
+-->
 <androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/toolbar"
     android:layout_width="match_parent"

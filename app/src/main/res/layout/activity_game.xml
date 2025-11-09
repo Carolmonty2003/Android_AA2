@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  activity_game.xml
+......................
+  Layout de la pantalla de juego (Ahorcado) con:
+   - TopBar reutilizable (Toolbar incluida por <include>).
+   - Contenedor del gameplay (gameContent) que se oculta al abrir Settings.
+   - FrameLayout (frame) donde se carga SettingsFragment mediante replace()+addToBackStack().
+-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -6,8 +15,7 @@
     android:orientation="vertical"
     >
 
-    <include layout="@layout/activity_topbar" /> <!--Chat gpt reciclar topbar-->
-
+    <include layout="@layout/activity_topbar" /> <!--IA-asistencia: reciclar topbar-->
 
     <!-- Teclado -->
     <LinearLayout
@@ -59,7 +67,7 @@
             android:layout_marginTop="16dp"
             android:orientation="vertical">
 
-            <!-- Fila 1: A-F -->
+            <!-- Teclado de la fila 1: A-F -->
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -121,7 +129,7 @@
                     android:textColor="@color/white"/>
             </LinearLayout>
 
-            <!-- Fila 2: G-L -->
+            <!-- Teclado de la fila 2: G-L -->
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -182,7 +190,7 @@
                     android:textColor="@color/white"/>
             </LinearLayout>
 
-            <!-- Fila 3: M-Q -->
+            <!-- Teclado de la fila 3: M-Q -->
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -244,7 +252,7 @@
                     android:textColor="@color/white"/>
             </LinearLayout>
 
-            <!-- Fila 4: S-X -->
+            <!-- Teclado de la fila 4: S-X -->
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -305,7 +313,7 @@
                     android:textColor="@color/white"/>
             </LinearLayout>
 
-            <!-- Fila 5: Y-Z -->
+            <!-- Teclado de la fila 5: Y-Z -->
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -362,12 +370,15 @@
         </LinearLayout>
     </LinearLayout>
 
-    <FrameLayout
-        android:id="@+id/frame"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:visibility="gone">
-    </FrameLayout>
+    <!-- CONTENEDOR DEL SettingsFragment
+            Hermano de rvLevels: se muestra (VISIBLE)
+            al abrir ajustes y rvLevels se oculta (GONE).-->
+        <FrameLayout
+            android:id="@+id/frame"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:visibility="gone">
+        </FrameLayout>
 
-</LinearLayout>
+    </LinearLayout>

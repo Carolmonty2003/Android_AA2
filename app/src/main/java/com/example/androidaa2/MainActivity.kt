@@ -3,12 +3,21 @@ package com.example.androidaa2
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
+/**
+ * MainActivity
+ * -------------
+ * Pantalla de menú principal (no es Splash). Muestra:
+ *  - Título e imagen del juego.
+ *  - Un área táctil (layout raíz con id @id/main) que al pulsarse
+ *    navega al selector de niveles (LevelSelectorActivity).
+ *
+ * Uso responsable de IA:
+ *  - IA-asistida para redactar y estandarizar comentarios y para recordar
+ *    el orden correcto del Night Mode.
+ */
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
