@@ -8,30 +8,31 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="90dp"
-        android:background="#F6A64B"
-        android:padding="12dp"
+        android:background="?attr/colorOnPrimaryContainer"
+        android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:gravity="center_vertical">
+        android:padding="12dp">
 
         <LinearLayout
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/tvWord"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
+                android:text="@string/word"
+                android:textColor="?attr/colorOnSecondary"
                 android:textSize="16sp"
-                android:text="Palabra: ----"/>
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tvLetters"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Letras: 0"/>
+                android:text="@string/letters" />
         </LinearLayout>
 
         <ImageView
@@ -39,6 +40,6 @@
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:contentDescription="@null"
-            android:src="@drawable/ic_easy"/>
+            android:src="@drawable/ic_easy" />
     </LinearLayout>
 </LinearLayout>
