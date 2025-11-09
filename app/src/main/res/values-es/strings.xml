@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Ahorcado</string>
+    <string name="menu_title">Ahorcado</string>
+    <string name="tap_continue">Toca para continuar</string>
+    <string name="settings">Ajustes</string>
+    <string name="night_mode">Modo Nocturno</string>
+    <string name="you_win">Ganaste</string>
+    <string name="word">Palabra</string>
+    <string name="letters">Letras</string>
+    <string name="you_lose">Perdiste</string>
+</resources>

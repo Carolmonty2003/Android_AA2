@@ -25,9 +25,10 @@ class LevelAdapter(private val items: List<Level>)
     override fun onBindViewHolder(holder: VH, position: Int) {
         val level = items[position]
         val len = level.lettersCount()
+        val context = holder.itemView.context
 
-        holder.tvWord.text = "Palabra: ${level.word}"
-        holder.tvLetters.text = "Letras: $len"
+        holder.tvWord.text = "${context.getString(R.string.word)}: ${level.word}" //chat gpt para variar texto segun localizacion
+        holder.tvLetters.text = "${context.getString(R.string.letters)}: $len" //chat gpt para variar texto segun localizacion
 
         val iconRes = when (len) {
             in 1..4 -> R.drawable.ic_easy
