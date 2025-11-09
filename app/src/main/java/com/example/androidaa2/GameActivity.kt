@@ -6,9 +6,11 @@ import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 
@@ -20,6 +22,8 @@ class GameActivity : AppCompatActivity() {
     private lateinit var tvResult: TextView
     private lateinit var btnBack: Button
     private lateinit var myToolbar: Toolbar
+    private lateinit var frame: FrameLayout
+    private lateinit var gameContent: View
 
     private lateinit var target: String
     private var errors: Int = 0
@@ -33,10 +37,25 @@ class GameActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game)
 
+        val isNight: Boolean = getSharedPreferences("settings", MODE_PRIVATE)
+            .getBoolean("night", false)
+        AppCompatDelegate.setDefaultNightMode(
+            if (isNight) AppCompatDelegate.MODE_NIGHT_YES
+            else AppCompatDelegate.MODE_NIGHT_NO
+        )
+
+
+        myToolbar = findViewById(R.id.toolbar)
+        setSupportActionBar(myToolbar)
+        supportActionBar?.title = getString(R.string.app_name)
+
         imgHangman = findViewById<ImageView>(R.id.imgAhorcado)
         tvMasked   = findViewById<TextView>(R.id.tvMasked)
         tvResult   = findViewById<TextView>(R.id.tvResult)
         btnBack    = findViewById<Button>(R.id.btnBack)
+
+        frame = findViewById(R.id.frame)
+        gameContent = findViewById(R.id.game)
 
         val received: String? = intent.getStringExtra("WORD")
         target = (received ?: "ANDROID").uppercase()
@@ -49,8 +68,6 @@ class GameActivity : AppCompatActivity() {
                                    //el ciclo de vida onPause(), onStop() y por ultimo onDestroy(), lo que hace que se cierre
                                    // la actividad y saca la ultima de la backstack de la pila de pantallas
         }
-        myToolbar = findViewById(R.id.toolbar)
-        setSupportActionBar(myToolbar)
     }
 
     fun onKeyClick(view: View) {
@@ -150,18 +167,35 @@ class GameActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return if (item.itemId == R.id.settings)
-        {
-            //loadFragment(SettingsFragment())
-            true
-        }
-        else
-        {
-            super.onOptionsItemSelected(item)
+        return when (item.itemId) {
+            R.id.settings -> {
+                openSettings()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
         }
     }
 
-    //private fun loadFragment(fragment: Fragment){
-    //    supportFragmentManager.beginTransaction().replace(R.id.frame,fragment).commit()
-    //}
+    private fun openSettings() {
+        gameContent.visibility = View.GONE
+        frame.visibility = View.VISIBLE
+
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.frame, SettingsFragment())
+            .addToBackStack("settings")
+            .commit()
+
+        supportActionBar?.title = getString(R.string.settings)
+    }
+
+    override fun onBackPressed() {
+        if (frame.visibility == View.VISIBLE) {
+            supportFragmentManager.popBackStack()
+            frame.visibility = View.GONE
+            gameContent.visibility = View.VISIBLE
+            supportActionBar?.title = getString(R.string.app_name)
+        } else {
+            super.onBackPressed()
+        }
+    }
 }

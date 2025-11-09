@@ -1,60 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/game"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center_horizontal"
+    android:layout_weight="1"
     android:orientation="vertical"
     >
 
+    <include layout="@layout/activity_topbar" /> <!--Chat gpt reciclar topbar-->
 
-    <include
-        layout="@layout/activity_topbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <ImageView
-        android:id="@+id/imgAhorcado"
-        android:layout_width="220dp"
-        android:layout_height="220dp"
-        android:src="@drawable/ic_ahorcado_0" />
-
-    <TextView
-        android:id="@+id/tvMasked"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="_ _ _"
-        android:textSize="28sp"
-        android:textStyle="bold" />
-
-
-    <TextView
-        android:id="@+id/tvResult"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:text="You Win"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:visibility="gone" />
-
-    <Button
-        android:id="@+id/btnBack"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Tap to continue"
-        android:visibility="gone" />
 
     <!-- Teclado -->
     <LinearLayout
+        android:id="@+id/game"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
+        android:gravity="center_horizontal"
         android:padding="16dp"
         >
+
+
+        <ImageView
+            android:id="@+id/imgAhorcado"
+            android:layout_width="220dp"
+            android:layout_height="220dp"
+            android:src="@drawable/ic_ahorcado_0" />
+
+        <TextView
+            android:id="@+id/tvMasked"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="_ _ _"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvResult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="You Win"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Tap to continue"
+            android:visibility="gone" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -338,5 +336,13 @@
 
         </LinearLayout>
     </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/frame"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:visibility="gone">
+    </FrameLayout>
 
 </LinearLayout>
