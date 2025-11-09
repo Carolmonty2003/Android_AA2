@@ -1,17 +1,22 @@
 package com.example.androidaa2
 
 import android.os.Bundle
-import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
+import android.view.Menu
+import android.view.MenuItem
+import android.view.View
+import android.widget.FrameLayout
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import androidx.appcompat.app.AppCompatDelegate
+import androidx.appcompat.widget.Toolbar
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class LevelSelectorActivity : AppCompatActivity() {
 
     private lateinit var rv: RecyclerView
+    private lateinit var myToolbar: Toolbar
+    private lateinit var frame: FrameLayout
 
     // Lista
     private val levels = listOf(
@@ -41,8 +46,59 @@ class LevelSelectorActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_level_selector)
 
+        val isNight: Boolean = getSharedPreferences("settings", MODE_PRIVATE)
+            .getBoolean("night", false)
+        AppCompatDelegate.setDefaultNightMode(
+            if (isNight) AppCompatDelegate.MODE_NIGHT_YES
+            else AppCompatDelegate.MODE_NIGHT_NO
+        )
+
         rv = findViewById(R.id.rvLevels)
+        frame = findViewById(R.id.frame)
+        myToolbar = findViewById(R.id.toolbar)
+
+        setSupportActionBar(myToolbar)
+        supportActionBar?.title = getString(R.string.app_name)
+
         rv.layoutManager = LinearLayoutManager(this)
         rv.adapter = LevelAdapter(levels)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.custom_topbar, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.settings -> {
+                openSettings()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
+
+    private fun openSettings() {
+        rv.visibility = View.GONE
+        frame.visibility = View.VISIBLE
+
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.frame, SettingsFragment())
+            .addToBackStack("settings")
+            .commit()
+
+        supportActionBar?.title = getString(R.string.settings)
+    }
+
+    override fun onBackPressed() {
+        if (frame.visibility == View.VISIBLE) {
+            supportFragmentManager.popBackStack()
+            frame.visibility = View.GONE
+            rv.visibility = View.VISIBLE
+            supportActionBar?.title = getString(R.string.app_name)
+        } else {
+            super.onBackPressed()
+        }
     }
 }

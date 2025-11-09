@@ -2,4 +2,6 @@
     <string name="app_name">Ahorcado</string>
     <string name="menu_title">Ahorcado</string>
     <string name="tap_continue">Tap to continue</string>
+    <string name="settings">Settings</string>
+    <string name="night_mode">Night Mode</string>
 </resources>
