@@ -1,12 +1,17 @@
 package com.example.androidaa2
 
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
+import androidx.fragment.app.Fragment
+
 
 class GameActivity : AppCompatActivity() {
 
@@ -14,6 +19,7 @@ class GameActivity : AppCompatActivity() {
     private lateinit var tvMasked: TextView
     private lateinit var tvResult: TextView
     private lateinit var btnBack: Button
+    private lateinit var myToolbar: Toolbar
 
     private lateinit var target: String
     private var errors: Int = 0
@@ -43,6 +49,8 @@ class GameActivity : AppCompatActivity() {
                                    //el ciclo de vida onPause(), onStop() y por ultimo onDestroy(), lo que hace que se cierre
                                    // la actividad y saca la ultima de la backstack de la pila de pantallas
         }
+        myToolbar = findViewById(R.id.toolbar)
+        setSupportActionBar(myToolbar)
     }
 
     fun onKeyClick(view: View) {
@@ -135,4 +143,25 @@ class GameActivity : AppCompatActivity() {
         }
         disableAll(root)
     }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.custom_topbar, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return if (item.itemId == R.id.settings)
+        {
+            //loadFragment(SettingsFragment())
+            true
+        }
+        else
+        {
+            super.onOptionsItemSelected(item)
+        }
+    }
+
+    //private fun loadFragment(fragment: Fragment){
+    //    supportFragmentManager.beginTransaction().replace(R.id.frame,fragment).commit()
+    //}
 }

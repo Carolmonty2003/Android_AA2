@@ -6,6 +6,8 @@
     android:orientation="vertical"
     tools:menu="@menu/custom_topbar">
 
+    <include layout="@layout/activity_topbar"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvLevels"
         android:layout_width="match_parent"

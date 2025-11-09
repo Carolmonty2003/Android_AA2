@@ -6,9 +6,13 @@
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    android:padding="16dp"
-    tools:menu="@menu/custom_topbar">
+    >
 
+
+    <include
+        layout="@layout/activity_topbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
     <ImageView
         android:id="@+id/imgAhorcado"
@@ -47,283 +51,292 @@
     <!-- Teclado -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp"
+        >
 
-        <!-- Fila 1: A-F -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_marginTop="16dp"
+            android:orientation="vertical">
 
-            <Button
-                android:id="@+id/btnA"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="onKeyClick"
-                android:text="A" />
+            <!-- Fila 1: A-F -->
 
-            <Button
-                android:id="@+id/btnB"
-                android:layout_width="0dp"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="onKeyClick"
-                android:text="B" />
+                android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/btnC"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="onKeyClick"
-                android:text="C" />
+                <Button
+                    android:id="@+id/btnA"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="onKeyClick"
+                    android:text="A" />
 
-            <Button
-                android:id="@+id/btnD"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="onKeyClick"
-                android:text="D" />
+                <Button
+                    android:id="@+id/btnB"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="onKeyClick"
+                    android:text="B" />
 
-            <Button
-                android:id="@+id/btnE"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="onKeyClick"
-                android:text="E" />
+                <Button
+                    android:id="@+id/btnC"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="onKeyClick"
+                    android:text="C" />
 
-            <Button
-                android:id="@+id/btnF"
-                android:layout_width="0dp"
+                <Button
+                    android:id="@+id/btnD"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="onKeyClick"
+                    android:text="D" />
+
+                <Button
+                    android:id="@+id/btnE"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="onKeyClick"
+                    android:text="E" />
+
+                <Button
+                    android:id="@+id/btnF"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="onKeyClick"
+                    android:text="F" />
+            </LinearLayout>
+
+            <!-- Fila 2: G-L -->
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="onKeyClick"
-                android:text="F" />
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnG"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="onKeyClick"
+                    android:text="G" />
+
+                <Button
+                    android:id="@+id/btnH"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="onKeyClick"
+                    android:text="H" />
+
+                <Button
+                    android:id="@+id/btnI"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="onKeyClick"
+                    android:text="I" />
+
+                <Button
+                    android:id="@+id/btnJ"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="onKeyClick"
+                    android:text="J" />
+
+                <Button
+                    android:id="@+id/btnK"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="onKeyClick"
+                    android:text="K" />
+
+                <Button
+                    android:id="@+id/btnL"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="onKeyClick"
+                    android:text="L" />
+            </LinearLayout>
+
+            <!-- Fila 3: M-Q -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+                <Button
+                    android:id="@+id/btnM"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="onKeyClick"
+                    android:text="M" />
+
+                <Button
+                    android:id="@+id/btnN"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="onKeyClick"
+                    android:text="N" />
+
+                <Button
+                    android:id="@+id/btnO"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="onKeyClick"
+                    android:text="O" />
+
+                <Button
+                    android:id="@+id/btnP"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="onKeyClick"
+                    android:text="P" />
+
+                <Button
+                    android:id="@+id/btnQ"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="onKeyClick"
+                    android:text="Q" />
+
+                <Button
+                    android:id="@+id/btnR"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="onKeyClick"
+                    android:text="R" />
+            </LinearLayout>
+
+            <!-- Fila 4: S-X -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnS"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="onKeyClick"
+                    android:text="S" />
+
+                <Button
+                    android:id="@+id/btnT"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="onKeyClick"
+                    android:text="T" />
+
+                <Button
+                    android:id="@+id/btnU"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="onKeyClick"
+                    android:text="U" />
+
+                <Button
+                    android:id="@+id/btnV"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="onKeyClick"
+                    android:text="V" />
+
+                <Button
+                    android:id="@+id/btnW"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="onKeyClick"
+                    android:text="W" />
+
+                <Button
+                    android:id="@+id/btnX"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="onKeyClick"
+                    android:text="X" />
+            </LinearLayout>
+
+            <!-- Fila 5: Y-Z -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnY"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="onKeyClick"
+                    android:text="Y" />
+
+                <Button
+                    android:id="@+id/btnZ"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="onKeyClick"
+                    android:text="Z" />
+
+                <!--Para ayudar a distribucion y que se vea ordenado-->
+                <Button
+                    android:id="@+id/btnNon"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:visibility="invisible" />
+
+                <Button
+                    android:id="@+id/btnNon1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:visibility="invisible" />
+
+                <Button
+                    android:id="@+id/btnNon2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:visibility="invisible" />
+
+                <Button
+                    android:id="@+id/btnNon3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:visibility="invisible" />
+            </LinearLayout>
+
         </LinearLayout>
-
-        <!-- Fila 2: G-L -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/btnG"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="onKeyClick"
-                android:text="G" />
-
-            <Button
-                android:id="@+id/btnH"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="onKeyClick"
-                android:text="H" />
-
-            <Button
-                android:id="@+id/btnI"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="onKeyClick"
-                android:text="I" />
-
-            <Button
-                android:id="@+id/btnJ"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="onKeyClick"
-                android:text="J" />
-
-            <Button
-                android:id="@+id/btnK"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="onKeyClick"
-                android:text="K" />
-
-            <Button
-                android:id="@+id/btnL"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="onKeyClick"
-                android:text="L" />
-        </LinearLayout>
-
-        <!-- Fila 3: M-Q -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-
-            <Button
-                android:id="@+id/btnM"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="onKeyClick"
-                android:text="M" />
-
-            <Button
-                android:id="@+id/btnN"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="onKeyClick"
-                android:text="N" />
-
-            <Button
-                android:id="@+id/btnO"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="onKeyClick"
-                android:text="O" />
-
-            <Button
-                android:id="@+id/btnP"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="onKeyClick"
-                android:text="P" />
-
-            <Button
-                android:id="@+id/btnQ"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="onKeyClick"
-                android:text="Q" />
-
-            <Button
-                android:id="@+id/btnR"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="onKeyClick"
-                android:text="R" />
-        </LinearLayout>
-
-        <!-- Fila 4: S-X -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/btnS"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="onKeyClick"
-                android:text="S" />
-
-            <Button
-                android:id="@+id/btnT"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="onKeyClick"
-                android:text="T" />
-
-            <Button
-                android:id="@+id/btnU"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="onKeyClick"
-                android:text="U" />
-
-            <Button
-                android:id="@+id/btnV"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="onKeyClick"
-                android:text="V" />
-
-            <Button
-                android:id="@+id/btnW"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="onKeyClick"
-                android:text="W" />
-
-            <Button
-                android:id="@+id/btnX"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="onKeyClick"
-                android:text="X" />
-        </LinearLayout>
-
-        <!-- Fila 5: Y-Z -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/btnY"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="onKeyClick"
-                android:text="Y" />
-
-            <Button
-                android:id="@+id/btnZ"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="onKeyClick"
-                android:text="Z" />
-
-            <!--Para ayudar a distribucion y que se vea ordenado-->
-            <Button
-                android:id="@+id/btnNon"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:visibility="invisible" />
-
-            <Button
-                android:id="@+id/btnNon1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:visibility="invisible" />
-
-            <Button
-                android:id="@+id/btnNon2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:visibility="invisible" />
-
-            <Button
-                android:id="@+id/btnNon3"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:visibility="invisible" />
-        </LinearLayout>
-
     </LinearLayout>
 
 </LinearLayout>

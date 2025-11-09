@@ -1,9 +1,12 @@
 package com.example.androidaa2
 
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -12,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView
 class LevelSelectorActivity : AppCompatActivity() {
 
     private lateinit var rv: RecyclerView
+    private lateinit var myToolbar: Toolbar
 
     // Lista
     private val levels = listOf(
@@ -44,5 +48,28 @@ class LevelSelectorActivity : AppCompatActivity() {
         rv = findViewById(R.id.rvLevels)
         rv.layoutManager = LinearLayoutManager(this)
         rv.adapter = LevelAdapter(levels)
+        myToolbar = findViewById(R.id.toolbar)
+        setSupportActionBar(myToolbar)
     }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.custom_topbar, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return if (item.itemId == R.id.settings)
+        {
+            //loadFragment(SettingsFragment())
+            true
+        }
+        else
+        {
+            super.onOptionsItemSelected(item)
+        }
+    }
+
+    //private fun loadFragment(fragment: Fragment){
+    //    supportFragmentManager.beginTransaction().replace(R.id.frame,fragment).commit()
+    //}
 }
