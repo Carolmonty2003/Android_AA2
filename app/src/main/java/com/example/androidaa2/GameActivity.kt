@@ -138,7 +138,9 @@ class GameActivity : AppCompatActivity() {
         if (allRevealed || lose) {
             finished = true
             tvResult.visibility = View.VISIBLE
-            tvResult.text = if (allRevealed) "You Win" else "You Lose"
+            val winText: String = getString(R.string.you_win)
+            val loseText: String = getString(R.string.you_lose)
+            tvResult.text = if (allRevealed) winText else loseText
             btnBack.visibility = View.VISIBLE //.VISIBLE chat gpt
 
             disableKeyboard()
