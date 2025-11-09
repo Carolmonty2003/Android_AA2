@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  activity_level_selector.xml
+ ................................
+  Lista de niveles con:
+   - TopBar reutilizable (Toolbar incluida por <include>).
+   - RecyclerView para los niveles (rvLevels).
+   - FrameLayout para alojar SettingsFragment al pulsar el icono de la TopBar.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/activity_topbar"/><!--IA-asistencia: reciclar topbar-->
+
+    <!-- CONTENIDO: RecyclerView con scroll vertical de niveles
+            Usa 0dp + layout_weight=1 para que comparta altura
+            con el 'frame' cuando sea visible-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvLevels"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="8dp" />
+
+    <!-- CONTENEDOR DEL SettingsFragment
+            Hermano de rvLevels: se muestra (VISIBLE)
+            al abrir ajustes y rvLevels se oculta (GONE).-->
+   <FrameLayout
+       android:id="@+id/frame"
+       android:layout_width="match_parent"
+       android:layout_height="0dp"
+       android:layout_weight="1"
+       android:visibility="gone">
+   </FrameLayout>
+
+</LinearLayout>

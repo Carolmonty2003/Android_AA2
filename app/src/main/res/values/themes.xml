@@ -1,0 +1,12 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.AndroidAA2" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="colorPrimary">#1A237E</item> -->
+        <item name="colorOnPrimaryContainer">#8FE3FF</item>
+        <item name="colorOnSecondaryContainer">#00055D</item>
+        <item name="colorOnSecondary">#000000</item>
+    </style>
+
+    <style name="Theme.AndroidAA2" parent="Base.Theme.AndroidAA2" />
+</resources>
